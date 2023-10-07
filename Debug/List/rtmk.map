@@ -1,0 +1,294 @@
+###############################################################################
+#
+# IAR ELF Linker V8.50.6.265/W32 for ARM                  03/Feb/2021  16:23:58
+# Copyright 2007-2020 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\Eojwo\OneDrive\Computer Engineering\Computer Systems
+#        Engineering 2\Debug\Exe\rtmk.out
+#    Map file     =
+#        C:\Users\Eojwo\OneDrive\Computer Engineering\Computer Systems
+#        Engineering 2\Debug\List\rtmk.map
+#    Command line =
+#        -f C:\Users\Eojwo\AppData\Local\Temp\EW12A2.tmp
+#        ("C:\Users\Eojwo\OneDrive\Computer Engineering\Computer Systems
+#        Engineering 2\Debug\Obj\context_switching_functions_march_2019.o"
+#        "C:\Users\Eojwo\OneDrive\Computer Engineering\Computer Systems
+#        Engineering 2\Debug\Obj\cstartup.o" "C:\Users\Eojwo\OneDrive\Computer
+#        Engineering\Computer Systems Engineering 2\Debug\Obj\exceptions.o"
+#        "C:\Users\Eojwo\OneDrive\Computer Engineering\Computer Systems
+#        Engineering 2\Debug\Obj\kernel_functions.o"
+#        "C:\Users\Eojwo\OneDrive\Computer Engineering\Computer Systems
+#        Engineering 2\Debug\Obj\main.o" "C:\Users\Eojwo\OneDrive\Computer
+#        Engineering\Computer Systems Engineering 2\Debug\Obj\startup_sam3x.o"
+#        "C:\Users\Eojwo\OneDrive\Computer Engineering\Computer Systems
+#        Engineering 2\Debug\Obj\system_sam3x.o" --no_out_extension -o
+#        "C:\Users\Eojwo\OneDrive\Computer Engineering\Computer Systems
+#        Engineering 2\Debug\Exe\rtmk.out" --redirect _Printf=_PrintfFullNoMb
+#        --redirect _Scanf=_ScanfFullNoMb --map
+#        "C:\Users\Eojwo\OneDrive\Computer Engineering\Computer Systems
+#        Engineering 2\Debug\List\rtmk.map" --config
+#        "C:\Users\Eojwo\OneDrive\Computer Engineering\Computer Systems
+#        Engineering 2\sam3x8-sram_BigHeap.icf" --semihosting --entry
+#        __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__Heap_Handler  = NoFree
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The no free heap was selected because no calls to memory
+deallocation functions were found in the application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x2007'0000 { ro section .intvec };
+"P1":  place in [from 0x2007'0000 to 0x2008'7fff] { ro };
+define block CSTACK with size = 2K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2007'0000 to 0x2008'7fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy with packing = copy, complex ranges { rw };
+
+  Section            Kind         Address   Size  Object
+  -------            ----         -------   ----  ------
+"A0":                                       0xf4
+  .intvec                     0x2007'0000   0xf4  <Block>
+    .intvec          const    0x2007'0000   0xf4  startup_sam3x.o [1]
+                            - 0x2007'00f4   0xf4
+
+"P1-P2", part 1 of 2:                      0x424
+  .text              ro code  0x2007'00f4  0x1c8  context_switching_functions_march_2019.o [1]
+  .text              ro code  0x2007'02bc   0x24  kernel_functions.o [1]
+  .text              ro code  0x2007'02e0   0xa0  system_sam3x.o [1]
+  .text              ro code  0x2007'0380   0x90  main.o [1]
+  .text              ro code  0x2007'0410   0x30  startup_sam3x.o [1]
+  .text              ro code  0x2007'0440    0xc  cstartup.o [1]
+  .text              ro code  0x2007'044c   0x1e  cmain.o [3]
+  .text              ro code  0x2007'046a   0x2e  copy_init3.o [3]
+  .text              ro code  0x2007'0498   0x28  data_init.o [3]
+  .text              ro code  0x2007'04c0    0x4  exit.o [2]
+  .text              ro code  0x2007'04c4    0xa  cexit.o [3]
+  .text              ro code  0x2007'04ce    0x2  exceptions.o [1]
+  .text              ro code  0x2007'04d0   0x14  exit.o [4]
+  .iar.init_table    const    0x2007'04e4   0x14  - Linker created -
+  .rodata            const    0x2007'04f8    0x0  copy_init3.o [3]
+  P1-P2 s0                    0x2007'04f8   0x10  <Init block>
+    .data            inited   0x2007'04f8    0x4  system_sam3x.o [1]
+    .bss             inited   0x2007'04fc    0x4  kernel_functions.o [1]
+    .bss             inited   0x2007'0500    0x4  kernel_functions.o [1]
+    .bss             inited   0x2007'0504    0x4  kernel_functions.o [1]
+  Initializer bytes  const    0x2007'0508   0x10  <for P1-P2 s0>
+                            - 0x2007'0518  0x424
+
+"P1-P2", part 2 of 2:                      0x800
+  CSTACK                      0x2007'0518  0x800  <Block>
+    CSTACK           uninit   0x2007'0518  0x800  <Block tail>
+                            - 0x2007'0d18  0x800
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+  0x2007'0d18  0x2008'7fff  0x1'72e8
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Copy (__iar_copy_init3)
+    1 source range, total size 0x10:
+          0x2007'0508  0x10
+    1 destination range, total size 0x10:
+          0x2007'04f8  0x10
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                                    ro code  ro data  rw data
+    ------                                    -------  -------  -------
+command line/config:
+    -------------------------------------------------------------------
+    Total:
+
+C:\Users\Eojwo\OneDrive\Computer Engineering\Computer Systems Engineering 2\Debug\Obj: [1]
+    context_switching_functions_march_2019.o      456
+    cstartup.o                                     12
+    exceptions.o                                    2
+    kernel_functions.o                             36       12       12
+    main.o                                        144
+    startup_sam3x.o                                48      244
+    system_sam3x.o                                160        4        4
+    -------------------------------------------------------------------
+    Total:                                        858      260       16
+
+dl7M_tln.a: [2]
+    exit.o                                          4
+    -------------------------------------------------------------------
+    Total:                                          4
+
+rt7M_tl.a: [3]
+    cexit.o                                        10
+    cmain.o                                        30
+    copy_init3.o                                   46
+    data_init.o                                    40
+    -------------------------------------------------------------------
+    Total:                                        126
+
+shb_l.a: [4]
+    exit.o                                         20
+    -------------------------------------------------------------------
+    Total:                                         20
+
+    Linker created                                          20    2'048
+-----------------------------------------------------------------------
+    Grand Total:                                1'008      280    2'064
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address  Size  Type      Object
+-----                       -------  ----  ----      ------
+.iar.init_table$$Base   0x2007'04e4         --   Gb  - Linker created -
+.iar.init_table$$Limit  0x2007'04f8         --   Gb  - Linker created -
+.intvec$$Base           0x2007'0000         --   Gb  - Linker created -
+.intvec$$Limit          0x2007'00f4         --   Gb  - Linker created -
+?main                   0x2007'044d        Code  Gb  cmain.o [3]
+ADC_Handler             0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+BusFault_Handler        0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+CAN0_Handler            0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+CAN1_Handler            0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+CSTACK$$Base            0x2007'0518         --   Gb  - Linker created -
+CSTACK$$Limit           0x2007'0d18         --   Gb  - Linker created -
+DACC_Handler            0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+DMAC_Handler            0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+DebugMon_Handler        0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+Dummy_Handler           0x2007'04cf   0x2  Code  Gb  exceptions.o [1]
+EFC0_Handler            0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+EFC1_Handler            0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+HSMCI_Handler           0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+HardFault_Handler       0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+KernelMode              0x2007'04fc   0x4  Data  Gb  kernel_functions.o [1]
+LoadContext_In_Run      0x2007'021d        Code  Gb  context_switching_functions_march_2019.o [1]
+LoadContext_In_Terminate
+                        0x2007'020f        Code  Gb  context_switching_functions_march_2019.o [1]
+MemManage_Handler       0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+NMI_Handler             0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+NVIC_SetPriority        0x2007'0381  0x24  Code  Lc  main.o [1]
+NextTask                0x2007'0504   0x4  Data  Gb  kernel_functions.o [1]
+PIOA_Handler            0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+PIOB_Handler            0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+PIOC_Handler            0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+PIOD_Handler            0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+PMC_Handler             0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+PWM_Handler             0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+PendSV_Handler          0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+PreviousTask            0x2007'0500   0x4  Data  Gb  kernel_functions.o [1]
+RSTC_Handler            0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+RTC_Handler             0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+RTT_Handler             0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+Region$$Table$$Base     0x2007'04e4         --   Gb  - Linker created -
+Region$$Table$$Limit    0x2007'04f8         --   Gb  - Linker created -
+Reset_Handler           0x2007'0439   0x8  Code  Gb  startup_sam3x.o [1]
+SPI0_Handler            0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+SSC_Handler             0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+SUPC_Handler            0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+SVC_Handler             0x2007'0145        Code  Gb  context_switching_functions_march_2019.o [1]
+SwitchContext           0x2007'0201        Code  Gb  context_switching_functions_march_2019.o [1]
+SysTick_Config          0x2007'03a5  0x30  Code  Lc  main.o [1]
+SysTick_Handler         0x2007'00f5        Code  Gb  context_switching_functions_march_2019.o [1]
+SystemCoreClock         0x2007'04f8   0x4  Data  Gb  system_sam3x.o [1]
+SystemInit              0x2007'02e1  0x70  Code  Gb  system_sam3x.o [1]
+TC0_Handler             0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+TC1_Handler             0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+TC2_Handler             0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+TC3_Handler             0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+TC4_Handler             0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+TC5_Handler             0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+TRNG_Handler            0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+TWI0_Handler            0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+TWI1_Handler            0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+TimerInt                0x2007'02bd   0x2  Code  Gb  kernel_functions.o [1]
+UART_Handler            0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+UOTGHS_Handler          0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+USART0_Handler          0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+USART1_Handler          0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+USART2_Handler          0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+UsageFault_Handler      0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+WDT_Handler             0x2007'04cf   0x2  Code  Wk  exceptions.o [1]
+__cmain                 0x2007'044d        Code  Gb  cmain.o [3]
+__exit                  0x2007'04d1  0x14  Code  Gb  exit.o [4]
+__iar_copy_init3        0x2007'046b  0x2e  Code  Gb  copy_init3.o [3]
+__iar_data_init3        0x2007'0499  0x28  Code  Gb  data_init.o [3]
+__iar_program_start     0x2007'0441        Code  Gb  cstartup.o [1]
+__low_level_init        0x2007'0411  0x20  Code  Gb  startup_sam3x.o [1]
+__region_NFC_RAM_end__ {Abs}
+                        0x2010'0fff        Data  Gb  <internal module>
+__region_NFC_RAM_start__ {Abs}
+                        0x2010'0000        Data  Gb  <internal module>
+__region_RAM0_end__ {Abs}
+                        0x2000'ffff        Data  Gb  <internal module>
+__region_RAM0_size__ {Abs}
+                           0x1'0000        Data  Gb  <internal module>
+__region_RAM0_start__ {Abs}
+                        0x2000'0000        Data  Gb  <internal module>
+__region_RAM1_end__ {Abs}
+                        0x2008'7fff        Data  Gb  <internal module>
+__region_RAM1_size__ {Abs}
+                             0x8000        Data  Gb  <internal module>
+__region_RAM1_start__ {Abs}
+                        0x2008'0000        Data  Gb  <internal module>
+__region_RAM_end__ {Abs}
+                        0x2008'7fff        Data  Gb  <internal module>
+__region_RAM_size__ {Abs}
+                           0x1'8000        Data  Gb  <internal module>
+__region_RAM_start__ {Abs}
+                        0x2007'0000        Data  Gb  <internal module>
+__vector_table          0x2007'0000  0xf4  Data  Gb  startup_sam3x.o [1]
+_call_main              0x2007'0459        Code  Gb  cmain.o [3]
+_exit                   0x2007'04c5        Code  Gb  cexit.o [3]
+_main                   0x2007'0467        Code  Gb  cmain.o [3]
+exit                    0x2007'04c1   0x4  Code  Gb  exit.o [2]
+init_kernel             0x2007'02c9  0x12  Code  Gb  kernel_functions.o [1]
+isr_off                 0x2007'029f        Code  Gb  context_switching_functions_march_2019.o [1]
+isr_on                  0x2007'0295        Code  Gb  context_switching_functions_march_2019.o [1]
+main                    0x2007'03d5  0x20  Code  Gb  main.o [1]
+run                     0x2007'02c1   0x8  Code  Gb  kernel_functions.o [1]
+set_ticks               0x2007'02bf   0x2  Code  Gb  kernel_functions.o [1]
+switch_to_stack_of_next_task
+                        0x2007'0281        Code  Gb  context_switching_functions_march_2019.o [1]
+
+
+[1] = C:\Users\Eojwo\OneDrive\Computer Engineering\Computer Systems Engineering 2\Debug\Obj
+[2] = dl7M_tln.a
+[3] = rt7M_tl.a
+[4] = shb_l.a
+
+  1'008 bytes of readonly  code memory
+    280 bytes of readonly  data memory
+  2'064 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

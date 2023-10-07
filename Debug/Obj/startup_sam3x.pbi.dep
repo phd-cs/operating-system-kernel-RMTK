@@ -1,0 +1,15 @@
+startup_sam3x.pbi: \
+  C:\Users\Eojwo\Desktop\Skola\År\ 2\Computer\ Systems\ Engineering\ 2\startup_sam3x.c \
+  C:\Users\Eojwo\Desktop\Skola\År\ 2\Computer\ Systems\ Engineering\ 2/at91sam3x8.h \
+  C:\Users\Eojwo\Desktop\Skola\År\ 2\Computer\ Systems\ Engineering\ 2/exceptions.h \
+  C:\Users\Eojwo\Desktop\Skola\År\ 2\Computer\ Systems\ Engineering\ 2/core_cm3.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.4\arm\inc\c\stdint.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.4\arm\inc\c\ycheck.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.4\arm\inc\c\yvals.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.4\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.4\arm\inc\c\DLib_Config_Normal.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.4\arm\inc\c\DLib_Product.h \
+  C:\Users\Eojwo\Desktop\Skola\År\ 2\Computer\ Systems\ Engineering\ 2/core_cmInstr.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.4\arm\inc\c\cmsis_iar.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.4\arm\inc\c/iccarm_builtin.h \
+  C:\Users\Eojwo\Desktop\Skola\År\ 2\Computer\ Systems\ Engineering\ 2/core_cmFunc.h
